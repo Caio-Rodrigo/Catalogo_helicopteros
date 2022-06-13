@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include('./components/head') %>
+<body>
+    <%- include('./components/nav') %>
+
+    <main>
+        
+        <h2>Cadastrar nova Aeronave</h2>
+        
+        <section id="cadastro">
+
+            <img src="../img/planta heli.png">
+
+            <form action="/create" method="post">
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" placeholder="Nome da aeronave">
+
+                <label for="imagem">Imagem:</label>
+                <input type="text" id="imagem" name="imagem" placeholder="Caminho da Imagem">
+                
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" placeholder="Descricao" rows="20" cols="80" id="descricao"></textarea>
+                
+                <button id="btnCadastrar" type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+
+
+    <%- include('./components/footer') %>
+</body>
+</html>

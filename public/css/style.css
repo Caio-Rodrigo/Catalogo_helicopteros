@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,400;1,600;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Gentium plus, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: radial-gradient(circle, rgba(47,15,15,1) 0%, rgba(12,21,38,1) 24%, rgba(125,127,163,1) 64%);
+}
+
+#navbar ul {
+    display:flex ;
+    padding: 1rem;
+}
+#navbar ul li{
+  display: inline-flex;
+  padding: 0 .15rem 0 .15rem;
+  font-size: 1.2rem;
+  margin: 1rem;
+  font-weight: bold;
+  color: hsl(281, 36%, 91%);
+  
+}
+
+#navbar a {
+text-decoration: none;
+transition: .6s;
+color:inherit;
+}
+
+#navbar a:hover {
+  background-color: rgba(5, 77, 172, 0.327);
+  border-radius: 6px;
+  padding: .5rem 1rem .5rem 1rem;; 
+  cursor: pointer;
+  color: rgb(30, 33, 34);
+}
+
+header {
+  background: rgb(140, 133, 133);
+  background: linear-gradient(
+    180deg,
+    rgba(140, 133, 133, 1) 3%,
+    rgba(17, 35, 48, 1) 49%,
+    rgba(140, 133, 133, 1) 99%
+  );
+  text-align: center;
+  padding: 3rem 0 3rem;
+}
+
+header img {
+  width: 40%;
+}
+
+main {
+  margin: 0 10rem 0 10rem;
+  color: #d5cece;
+}
+
+
+
+main h2 {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+
+
+.btnAbrModal {
+  margin: 2rem;
+  margin-bottom: 0;
+  width: 35%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  /* background: rgb(238,174,202); */
+  background: #0f142d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 1s;
+}
+
+.btnAbrModal:hover {
+  background: rgba(55, 57, 55, 0.508);
+}
+
+
+#rodaPe{
+    display: flex;
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    font-size: 1rem;
+}
+
+#rodaPe ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#rodaPe ul li{
+    padding: 0 1rem 0 1rem;
+    list-style: none;
+}
+
+#rodaPe ul li a{
+    color: #fff;
+    text-decoration: none;
+
+}
+
+
+
+section#cadastro{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 3rem;
+    align-items: center;
+}
+
+section#cadastro form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1100px) {
+  section#cadastro{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+  }
+  section#cadastro img{
+    width: 30%;
+    
+  }
+  section#cadastro form button{
+    width: 100%;
+  }
+  section#cadastro form input{
+    width: 80%;
+  }
+  section#cadastro form textarea{
+    width: 80%;
+  }
+
+}
+
+@media screen and  (max-width: 850px){
+  section#cadastro{
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
+section#cadastro img{
+  width: 40%;
+  padding-right: 3rem;  
+}
+
+section#cadastro form input {
+    width: 100%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    margin:  0rem 1rem 1rem 0;
+    border: solid 2px rgb(140, 133, 133);;
+}
+
+section#cadastro form textarea{
+  height: 8rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+section#cadastro form label{
+    color: rgb(140, 133, 133);
+
+}
+
+section#cadastro form button {
+    margin: 2rem;
+    margin-bottom: 0;
+    width: 35%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background: #0f142d;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 1s;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+
+section#cadastro form button:hover {
+    background: rgba(55, 57, 55, 0.508);
+}
+
+
+

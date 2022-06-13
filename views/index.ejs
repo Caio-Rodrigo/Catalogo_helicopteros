@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('./components/head') %>
+
+  <body>
+    <%- include('./components/nav') %>
+
+    <main>
+      <h2>Aeronaves</h2>
+      <section id="catalog">
+        <% angar.forEach((helicoptero) =>{ %>
+        <div class="helicoptero">
+          <img src="<%= helicoptero.imagem %>" />
+          <h3><%= helicoptero.modelo %></h3>
+          <div class="botao">
+              <a href="/getById/<%= helicoptero.id %>/put" id="editar">Editar</a>
+              <a href="/getById/<%= helicoptero.id %>/delete" id="apagar">Apagar</a>
+          </div>
+        </div>
+        <% }) %>
+      </section>
+    </main>
+    <% if (helicopteroPut != null) {%>
+        <%- include('./components/modalPut') %>
+    <% } %>
+
+    <% if (helicopteroDel != null) {%>
+        <%- include('./components/modalDel') %>
+    <% } %>
+
+    <%- include('./components/footer') %>
+
+  </body>
+</html>
