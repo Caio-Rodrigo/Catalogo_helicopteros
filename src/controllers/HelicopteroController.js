@@ -1,6 +1,6 @@
-const res = require('express/lib/response');
+const res = require("express/lib/response");
 const Helicoptero = require("../models/Helicoptero");
-const orederById = {order:[['id','ASC']]}
+const orederById = { order: [["id", "ASC"]] };
 
 const Op = require("sequelize").Op;
 
@@ -9,8 +9,19 @@ let type = "";
 
 const getAll = async (req, res) => {
   try {
+    setTimeout(() => {
+      message = "";
+      type = "";
+    }, 1000)
+
     const angar = await Helicoptero.findAll(orederById);
-    res.render("index", { angar , helicopteroPut: null, helicopteroDel: null });
+    res.render("index", {
+      angar,
+      helicopteroPut: null,
+      helicopteroDel: null,
+      message,
+      type,
+    });
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
@@ -18,7 +29,7 @@ const getAll = async (req, res) => {
 
 const register = (req, res) => {
   try {
-    res.render("register");
+    res.render("register", { message, type });
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
@@ -27,11 +38,17 @@ const register = (req, res) => {
 const create = async (req, res) => {
   try {
     const helicoptero = req.body;
-    if (!helicoptero) {
+    if ( !helicoptero.modelo ||
+      !helicoptero.imagem||
+      !helicoptero.descricao) {
+      message = "!!É necessario preencher todos os campos para o cadastro!!";
+      type = "danger";
       return res.redirect("/register");
     }
 
     await Helicoptero.create(helicoptero);
+    message = "Helicoptero registrado com sucesso!";
+    type = "success";
     res.redirect("/");
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -49,13 +66,17 @@ const getById = async (req, res) => {
         angar,
         helicopteroPut: helicoptero,
         helicopteroDel: null,
+        message,
+        type,
       });
     } else {
-      res.render('index', {
-                angar,
-                helicopteroPut: null,
-                helicopteroDel: helicoptero,
-            });
+      res.render("index", {
+        angar,
+        helicopteroPut: null,
+        helicopteroDel: helicoptero,
+        message,
+        type,
+      });
     }
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -65,22 +86,25 @@ const getById = async (req, res) => {
 const update = async (req, res) => {
   try {
     const helicoptero = req.body;
-    await Helicoptero.update(helicoptero, {where: {id: req.params.id}});
-    res.redirect('/');
+    await Helicoptero.update(helicoptero, { where: { id: req.params.id } });
+    message = "Helicoptero Atualizado com sucesso!";
+    type = "success";
+    res.redirect("/");
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
-}
+};
 
 const remove = async (req, res) => {
   try {
-    await Helicoptero.destroy({where: {id: req.params.id}});
-    res.redirect('/');
+    await Helicoptero.destroy({ where: { id: req.params.id } });
+    message = "Helicoptero removido com sucesso!";
+    type = "success";
+    res.redirect("/");
   } catch (err) {
     res.status(500).send({ error: err.message });
-    }
-
-}
+  }
+};
 
 module.exports = {
   getAll,

@@ -1,0 +1,29 @@
+.message {
+  align-items: center;
+  position: absolute;
+  top: 7rem;
+  right: 2rem;
+  z-index: 99999;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.message-danger {
+  background-color: #f5c6cb;
+  color: #e10202;
+}
+
+.message-success {
+  background-color: #d4edda;
+  color: #10a733;
+}
+
+.message i {
+  cursor: pointer;
+  font-size: 1.8rem;
+
+}

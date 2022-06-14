@@ -4,17 +4,31 @@
 
   <body>
     <%- include('./components/nav') %>
-
+   
     <main>
+      <% if (message != "") {%>
+        <%- include('./components/alert') %>
+    <% } %>
       <h2>Aeronaves</h2>
       <section id="catalog">
         <% angar.forEach((helicoptero) =>{ %>
-        <div class="helicoptero">
+
+          <div class="helicoptero">
+          <div class="dropdown">
+            <div class="dropdown-button">
+              <i class="bi bi-three-dots-vertical"></i>
+            </div>
+
+            <div class="dropdown-content">
+              <a href="/getById/<%= helicoptero.id %>/put" id="editar">Editar</a>
+              <a href="/getById/<%= helicoptero.id %>/delete" id="apagar">Apagar</a>
+            </div>
+          </div>
+
           <img src="<%= helicoptero.imagem %>" />
           <h3><%= helicoptero.modelo %></h3>
           <div class="botao">
-              <a href="/getById/<%= helicoptero.id %>/put" id="editar">Editar</a>
-              <a href="/getById/<%= helicoptero.id %>/delete" id="apagar">Apagar</a>
+              
           </div>
         </div>
         <% }) %>
@@ -30,5 +44,6 @@
 
     <%- include('./components/footer') %>
 
+    <script src="/js/scrypt.js"></script>
   </body>
 </html>

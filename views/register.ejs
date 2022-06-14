@@ -3,9 +3,11 @@
 <%- include('./components/head') %>
 <body>
     <%- include('./components/nav') %>
-
+  
     <main>
-        
+        <% if (message != "") {%>
+            <%- include('./components/alert') %>
+        <% } %>
         <h2>Cadastrar nova Aeronave</h2>
         
         <section id="cadastro">
@@ -30,5 +32,7 @@
 
 
     <%- include('./components/footer') %>
+
+    <script src="/js/scrypt.js"></script>
 </body>
 </html>

@@ -11,9 +11,9 @@ section#catalog div.helicoptero {
     padding: 1rem;
     width: 20rem;
     display: flex;
-    flex-wrap: no-wrap;
+    /* flex-wrap: no-wrap; */
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
   section#catalog div.helicoptero .botao {
     display: flex;
@@ -21,10 +21,11 @@ section#catalog div.helicoptero {
     flex-wrap: wrap;
   }
 
-  section#catalog div.helicoptero h3{
+  div.helicoptero h3{
     font-weight: bold;
       font-size: 1.5rem;
       padding: 0 0 1rem;
+      text-align: center;
   }
   
   section#catalog div.helicoptero img {
@@ -32,7 +33,7 @@ section#catalog div.helicoptero {
     height: 73%;
   }
   
-  section#catalog div.helicoptero p.intro {
+  /* section#catalog div.helicoptero p.intro {
     padding: 1rem 0 0.9rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -44,9 +45,9 @@ section#catalog div.helicoptero {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
-  }
+  } */
 
-  section#catalog div.helicoptero a#apagar {
+  /* section#catalog div.helicoptero a#apagar {
     align-items: center;
     border: solid 2px rgb(252, 5, 5);
     border-radius: 1rem;
@@ -96,4 +97,4 @@ section#catalog div.helicoptero {
     border: solid 3px rgb(4 223 183);
     border-radius: 2rem;
     color: #fff;
-  }
+  } */
