@@ -26,6 +26,7 @@ const viewDropdown = () => {
         content.style.display = "none";
     }
 
+
     })
   });
 };
