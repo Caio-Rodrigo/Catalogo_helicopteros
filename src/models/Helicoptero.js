@@ -31,4 +31,10 @@ const Helicoptero = connection.define(
   }
 );
 
+const initTable = async () => {
+  await Helicoptero.sync();
+};
+
+initTable();
+
 module.exports = Helicoptero;
